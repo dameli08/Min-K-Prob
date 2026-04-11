@@ -1,0 +1,23 @@
+method,auroc,interpretation
+loss,0.3405,no signal
+zlib,0.0821,no signal
+mink_0.1,0.3426,no signal
+mink_0.2,0.3165,no signal
+mink_0.3,0.3125,no signal
+mink_0.4,0.3288,no signal
+mink_0.5,0.3415,no signal
+mink_0.6,0.3316,no signal
+mink_0.7,0.3315,no signal
+mink_0.8,0.335,no signal
+mink_0.9,0.3273,no signal
+mink_1.0,0.3406,no signal
+minkpp_0.1,0.6046,weak signal
+minkpp_0.2,0.5642,weak signal
+minkpp_0.3,0.5519,weak signal
+minkpp_0.4,0.5529,weak signal
+minkpp_0.5,0.5497,no signal
+minkpp_0.6,0.5458,no signal
+minkpp_0.7,0.5539,weak signal
+minkpp_0.8,0.5632,weak signal
+minkpp_0.9,0.5599,weak signal
+minkpp_1.0,0.5823,weak signal
