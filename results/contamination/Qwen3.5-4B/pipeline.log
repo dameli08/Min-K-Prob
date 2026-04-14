@@ -1,0 +1,588 @@
+============================================================
+ Model path: /data/models/Qwen3.5-4B
+ Model name: Qwen3.5-4B
+ Output dir: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B
+============================================================
+[RUN ] scoring: /home/dameli/Min-K-Prob/controlled_datasets/controlled_dataset_english.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/Min-K-Prob/controlled_datasets/controlled_dataset_english.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/controlled_dataset_english.csv
+[sample]     all 100 rows
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  controlled_dataset_english  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.4980
+  zlib               -0.0145
+  mink_0.2           -7.1591
+  minkpp_0.2         -2.2901  <- main result (best ratio)
+  minkpp_0.1         -3.3666
+  minkpp_0.3         -1.7157
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/controlled_dataset_english.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] scoring: /home/dameli/Min-K-Prob/controlled_datasets/controlled_dataset_russian.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/Min-K-Prob/controlled_datasets/controlled_dataset_russian.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/controlled_dataset_russian.csv
+[sample]     all 100 rows
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  controlled_dataset_russian  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.1479
+  zlib               -0.0079
+  mink_0.2           -7.2948
+  minkpp_0.2         -1.8008  <- main result (best ratio)
+  minkpp_0.1         -2.7035
+  minkpp_0.3         -1.2938
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/controlled_dataset_russian.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] scoring: /home/dameli/Min-K-Prob/controlled_datasets/controlled_dataset_kazakh.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/Min-K-Prob/controlled_datasets/controlled_dataset_kazakh.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/controlled_dataset_kazakh.csv
+[sample]     all 100 rows
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  controlled_dataset_kazakh  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.0256
+  zlib               -0.0073
+  mink_0.2           -6.7211
+  minkpp_0.2         -2.0232  <- main result (best ratio)
+  minkpp_0.1         -3.0789
+  minkpp_0.3         -1.4406
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/controlled_dataset_kazakh.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] scoring: /home/dameli/8datasets/mmlu_all.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/mmlu_all.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_all.csv
+[sample]     100 / 15858 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  mmlu_all  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.8099
+  zlib               -0.0339
+  mink_0.2           -7.6485
+  minkpp_0.2         -1.7937  <- main result (best ratio)
+  minkpp_0.1         -2.5054
+  minkpp_0.3         -1.3780
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_all.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: mmlu_all.csv vs controlled_dataset_english.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         mmlu_all  (100 samples, label=1)
+  Unseen:       controlled_dataset_english  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.3999   no signal
+  zlib              0.2933   no signal
+  mink_0.1          0.4519   no signal
+  mink_0.2          0.4437   no signal
+  mink_0.3          0.4400   no signal
+  mink_0.4          0.4305   no signal
+  mink_0.5          0.4253   no signal
+  mink_0.6          0.4193   no signal
+  mink_0.7          0.4114   no signal
+  mink_0.8          0.3998   no signal
+  mink_0.9          0.3938   no signal
+  mink_1.0          0.3998   no signal
+  minkpp_0.1        0.7307   moderate — possible contamination
+  minkpp_0.2        0.7094   moderate — possible contamination  <- MAIN RESULT
+  minkpp_0.3        0.6834   moderate — possible contamination
+  minkpp_0.4        0.6855   moderate — possible contamination
+  minkpp_0.5        0.6956   moderate — possible contamination
+  minkpp_0.6        0.6956   moderate — possible contamination
+  minkpp_0.7        0.7105   moderate — possible contamination
+  minkpp_0.8        0.7147   moderate — possible contamination
+  minkpp_0.9        0.7203   moderate — possible contamination
+  minkpp_1.0        0.7459   moderate — possible contamination
+  ------------------------------------------------------
+  Seen dataset:   mmlu_all
+  Control:        controlled_dataset_english
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'mmlu_all'
+  higher than 'controlled_dataset_english', i.e. the model is more familiar
+  with 'mmlu_all' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_mmlu_all.csv
+[RUN ] scoring: /home/dameli/8datasets/mmlu_pro_all.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/mmlu_pro_all.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_pro_all.csv
+[sample]     100 / 12102 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  mmlu_pro_all  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.1579
+  zlib               -0.0214
+  mink_0.2           -6.5858
+  minkpp_0.2         -2.0142  <- main result (best ratio)
+  minkpp_0.1         -3.1383
+  minkpp_0.3         -1.4114
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_pro_all.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: mmlu_pro_all.csv vs controlled_dataset_english.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         mmlu_pro_all  (100 samples, label=1)
+  Unseen:       controlled_dataset_english  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.6926   moderate — possible contamination
+  zlib              0.4710   no signal
+  mink_0.1          0.5974   weak signal
+  mink_0.2          0.6681   moderate — possible contamination
+  mink_0.3          0.6961   moderate — possible contamination
+  mink_0.4          0.6943   moderate — possible contamination
+  mink_0.5          0.7107   moderate — possible contamination
+  mink_0.6          0.7027   moderate — possible contamination
+  mink_0.7          0.6929   moderate — possible contamination
+  mink_0.8          0.6864   moderate — possible contamination
+  mink_0.9          0.6842   moderate — possible contamination
+  mink_1.0          0.6930   moderate — possible contamination
+  minkpp_0.1        0.5955   weak signal
+  minkpp_0.2        0.6480   weak signal  <- MAIN RESULT
+  minkpp_0.3        0.6919   moderate — possible contamination
+  minkpp_0.4        0.6894   moderate — possible contamination
+  minkpp_0.5        0.7131   moderate — possible contamination
+  minkpp_0.6        0.7202   moderate — possible contamination
+  minkpp_0.7        0.7155   moderate — possible contamination
+  minkpp_0.8        0.7185   moderate — possible contamination
+  minkpp_0.9        0.7219   moderate — possible contamination
+  minkpp_1.0        0.7251   moderate — possible contamination
+  ------------------------------------------------------
+  Seen dataset:   mmlu_pro_all
+  Control:        controlled_dataset_english
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'mmlu_pro_all'
+  higher than 'controlled_dataset_english', i.e. the model is more familiar
+  with 'mmlu_pro_all' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_mmlu_pro_all.csv
+[RUN ] scoring: /home/dameli/8datasets/mmlu_cf_all.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/mmlu_cf_all.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_cf_all.csv
+[sample]     100 / 10005 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  mmlu_cf_all  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.9559
+  zlib               -0.0411
+  mink_0.2           -8.3142
+  minkpp_0.2         -2.0692  <- main result (best ratio)
+  minkpp_0.1         -2.8746
+  minkpp_0.3         -1.5710
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_cf_all.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: mmlu_cf_all.csv vs controlled_dataset_english.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         mmlu_cf_all  (100 samples, label=1)
+  Unseen:       controlled_dataset_english  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.3317   no signal
+  zlib              0.0863   no signal
+  mink_0.1          0.3592   no signal
+  mink_0.2          0.3075   no signal
+  mink_0.3          0.2987   no signal
+  mink_0.4          0.3126   no signal
+  mink_0.5          0.3213   no signal
+  mink_0.6          0.3165   no signal
+  mink_0.7          0.3207   no signal
+  mink_0.8          0.3250   no signal
+  mink_0.9          0.3193   no signal
+  mink_1.0          0.3317   no signal
+  minkpp_0.1        0.6354   weak signal
+  minkpp_0.2        0.6085   weak signal  <- MAIN RESULT
+  minkpp_0.3        0.5895   weak signal
+  minkpp_0.4        0.5902   weak signal
+  minkpp_0.5        0.5933   weak signal
+  minkpp_0.6        0.5911   weak signal
+  minkpp_0.7        0.5997   weak signal
+  minkpp_0.8        0.6079   weak signal
+  minkpp_0.9        0.6043   weak signal
+  minkpp_1.0        0.6312   weak signal
+  ------------------------------------------------------
+  Seen dataset:   mmlu_cf_all
+  Control:        controlled_dataset_english
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'mmlu_cf_all'
+  higher than 'controlled_dataset_english', i.e. the model is more familiar
+  with 'mmlu_cf_all' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_mmlu_cf_all.csv
+[RUN ] scoring: /home/dameli/8datasets/mmlu_redux_all.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/mmlu_redux_all.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_redux_all.csv
+[sample]     100 / 5700 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  mmlu_redux_all  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.9335
+  zlib               -0.0413
+  mink_0.2           -8.0201
+  minkpp_0.2         -2.0282  <- main result (best ratio)
+  minkpp_0.1         -2.6081
+  minkpp_0.3         -1.6316
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/mmlu_redux_all.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: mmlu_redux_all.csv vs controlled_dataset_english.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         mmlu_redux_all  (100 samples, label=1)
+  Unseen:       controlled_dataset_english  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.3445   no signal
+  zlib              0.2084   no signal
+  mink_0.1          0.4241   no signal
+  mink_0.2          0.3722   no signal
+  mink_0.3          0.3693   no signal
+  mink_0.4          0.3557   no signal
+  mink_0.5          0.3650   no signal
+  mink_0.6          0.3575   no signal
+  mink_0.7          0.3434   no signal
+  mink_0.8          0.3421   no signal
+  mink_0.9          0.3365   no signal
+  mink_1.0          0.3443   no signal
+  minkpp_0.1        0.7108   moderate — possible contamination
+  minkpp_0.2        0.6701   moderate — possible contamination  <- MAIN RESULT
+  minkpp_0.3        0.6518   moderate — possible contamination
+  minkpp_0.4        0.6411   weak signal
+  minkpp_0.5        0.6490   weak signal
+  minkpp_0.6        0.6542   moderate — possible contamination
+  minkpp_0.7        0.6465   weak signal
+  minkpp_0.8        0.6628   moderate — possible contamination
+  minkpp_0.9        0.6633   moderate — possible contamination
+  minkpp_1.0        0.6824   moderate — possible contamination
+  ------------------------------------------------------
+  Seen dataset:   mmlu_redux_all
+  Control:        controlled_dataset_english
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'mmlu_redux_all'
+  higher than 'controlled_dataset_english', i.e. the model is more familiar
+  with 'mmlu_redux_all' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_mmlu_redux_all.csv
+[RUN ] scoring: /home/dameli/8datasets/rummlu_all.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/rummlu_all.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/rummlu_all.csv
+[sample]     100 / 14297 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  rummlu_all  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.5297
+  zlib               -0.0178
+  mink_0.2           -7.4932
+  minkpp_0.2         -1.8333  <- main result (best ratio)
+  minkpp_0.1         -2.7191
+  minkpp_0.3         -1.3360
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/rummlu_all.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: rummlu_all.csv vs controlled_dataset_russian.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         rummlu_all  (100 samples, label=1)
+  Unseen:       controlled_dataset_russian  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.3042   no signal
+  zlib              0.3049   no signal
+  mink_0.1          0.4886   no signal
+  mink_0.2          0.4457   no signal
+  mink_0.3          0.4036   no signal
+  mink_0.4          0.3584   no signal
+  mink_0.5          0.3310   no signal
+  mink_0.6          0.3116   no signal
+  mink_0.7          0.3010   no signal
+  mink_0.8          0.2982   no signal
+  mink_0.9          0.2994   no signal
+  mink_1.0          0.3044   no signal
+  minkpp_0.1        0.5522   weak signal
+  minkpp_0.2        0.5297   no signal  <- MAIN RESULT
+  minkpp_0.3        0.5259   no signal
+  minkpp_0.4        0.5227   no signal
+  minkpp_0.5        0.5349   no signal
+  minkpp_0.6        0.5424   no signal
+  minkpp_0.7        0.5589   weak signal
+  minkpp_0.8        0.5783   weak signal
+  minkpp_0.9        0.5934   weak signal
+  minkpp_1.0        0.6144   weak signal
+  ------------------------------------------------------
+  Seen dataset:   rummlu_all
+  Control:        controlled_dataset_russian
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'rummlu_all'
+  higher than 'controlled_dataset_russian', i.e. the model is more familiar
+  with 'rummlu_all' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_rummlu_all.csv
+[RUN ] scoring: /home/dameli/8datasets/MMLU_RUS_Translation.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/MMLU_RUS_Translation.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/MMLU_RUS_Translation.csv
+[sample]     100 / 14042 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  MMLU_RUS_Translation  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.5423
+  zlib               -0.0183
+  mink_0.2           -7.4503
+  minkpp_0.2         -1.6089  <- main result (best ratio)
+  minkpp_0.1         -2.2983
+  minkpp_0.3         -1.1598
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/MMLU_RUS_Translation.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: MMLU_RUS_Translation.csv vs controlled_dataset_russian.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         MMLU_RUS_Translation  (100 samples, label=1)
+  Unseen:       controlled_dataset_russian  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.3683   no signal
+  zlib              0.2884   no signal
+  mink_0.1          0.5343   no signal
+  mink_0.2          0.4757   no signal
+  mink_0.3          0.4166   no signal
+  mink_0.4          0.3959   no signal
+  mink_0.5          0.3808   no signal
+  mink_0.6          0.3754   no signal
+  mink_0.7          0.3656   no signal
+  mink_0.8          0.3632   no signal
+  mink_0.9          0.3612   no signal
+  mink_1.0          0.3682   no signal
+  minkpp_0.1        0.6476   weak signal
+  minkpp_0.2        0.6356   weak signal  <- MAIN RESULT
+  minkpp_0.3        0.6279   weak signal
+  minkpp_0.4        0.6117   weak signal
+  minkpp_0.5        0.6261   weak signal
+  minkpp_0.6        0.6477   weak signal
+  minkpp_0.7        0.6608   moderate — possible contamination
+  minkpp_0.8        0.6832   moderate — possible contamination
+  minkpp_0.9        0.6892   moderate — possible contamination
+  minkpp_1.0        0.7045   moderate — possible contamination
+  ------------------------------------------------------
+  Seen dataset:   MMLU_RUS_Translation
+  Control:        controlled_dataset_russian
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'MMLU_RUS_Translation'
+  higher than 'controlled_dataset_russian', i.e. the model is more familiar
+  with 'MMLU_RUS_Translation' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_MMLU_RUS_Translation.csv
+[RUN ] scoring: /home/dameli/8datasets/kazmmlu_all.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/kazmmlu_all.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/kazmmlu_all.csv
+[sample]     100 / 23000 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  kazmmlu_all  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.7648
+  zlib               -0.0302
+  mink_0.2           -7.5124
+  minkpp_0.2         -1.9951  <- main result (best ratio)
+  minkpp_0.1         -2.9191
+  minkpp_0.3         -1.4700
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/kazmmlu_all.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: kazmmlu_all.csv vs controlled_dataset_kazakh.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         kazmmlu_all  (100 samples, label=1)
+  Unseen:       controlled_dataset_kazakh  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.2156   no signal
+  zlib              0.0294   no signal
+  mink_0.1          0.4018   no signal
+  mink_0.2          0.3529   no signal
+  mink_0.3          0.3142   no signal
+  mink_0.4          0.2704   no signal
+  mink_0.5          0.2447   no signal
+  mink_0.6          0.2174   no signal
+  mink_0.7          0.2089   no signal
+  mink_0.8          0.2081   no signal
+  mink_0.9          0.2067   no signal
+  mink_1.0          0.2156   no signal
+  minkpp_0.1        0.5822   weak signal
+  minkpp_0.2        0.5288   no signal  <- MAIN RESULT
+  minkpp_0.3        0.5045   no signal
+  minkpp_0.4        0.4778   no signal
+  minkpp_0.5        0.4877   no signal
+  minkpp_0.6        0.4842   no signal
+  minkpp_0.7        0.4917   no signal
+  minkpp_0.8        0.5118   no signal
+  minkpp_0.9        0.5177   no signal
+  minkpp_1.0        0.5608   weak signal
+  ------------------------------------------------------
+  Seen dataset:   kazmmlu_all
+  Control:        controlled_dataset_kazakh
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'kazmmlu_all'
+  higher than 'controlled_dataset_kazakh', i.e. the model is more familiar
+  with 'kazmmlu_all' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_kazmmlu_all.csv
+[RUN ] scoring: /home/dameli/8datasets/MMLU_KAZ_Translation.csv
+[model]      /data/models/Qwen3.5-4B
+[dataset]    /home/dameli/8datasets/MMLU_KAZ_Translation.csv
+[output]     /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/MMLU_KAZ_Translation.csv
+[sample]     100 / 14042 rows (seed=42)
+
+========================================================
+  Model:    Qwen3.5-4B
+  Dataset:  MMLU_KAZ_Translation  (100 samples)
+
+  METHOD          MEAN SCORE   (higher = more familiar to model)
+  -------------------------------------------------------
+  loss               -2.1250
+  zlib               -0.0161
+  mink_0.2           -6.5178
+  minkpp_0.2         -1.6769  <- main result (best ratio)
+  minkpp_0.1         -2.5605
+  minkpp_0.3         -1.1951
+  -------------------------------------------------------
+  Per-row CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/MMLU_KAZ_Translation.csv
+  Summary CSV:    /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/summary.csv
+========================================================
+[RUN ] AUROC: MMLU_KAZ_Translation.csv vs controlled_dataset_kazakh.csv
+
+================================================================
+  Model:        Qwen3.5-4B
+  Seen:         MMLU_KAZ_Translation  (100 samples, label=1)
+  Unseen:       controlled_dataset_kazakh  (100 samples, label=0)
+
+  METHOD          AUROC    INTERPRETATION
+  ------------------------------------------------------
+  loss              0.4971   no signal
+  zlib              0.2872   no signal
+  mink_0.1          0.5653   weak signal
+  mink_0.2          0.5921   weak signal
+  mink_0.3          0.5821   weak signal
+  mink_0.4          0.5566   weak signal
+  mink_0.5          0.5299   no signal
+  mink_0.6          0.5093   no signal
+  mink_0.7          0.4997   no signal
+  mink_0.8          0.4906   no signal
+  mink_0.9          0.4883   no signal
+  mink_1.0          0.4971   no signal
+  minkpp_0.1        0.6967   moderate — possible contamination
+  minkpp_0.2        0.7081   moderate — possible contamination  <- MAIN RESULT
+  minkpp_0.3        0.6997   moderate — possible contamination
+  minkpp_0.4        0.6992   moderate — possible contamination
+  minkpp_0.5        0.7078   moderate — possible contamination
+  minkpp_0.6        0.7144   moderate — possible contamination
+  minkpp_0.7        0.7239   moderate — possible contamination
+  minkpp_0.8        0.7312   moderate — possible contamination
+  minkpp_0.9        0.7372   moderate — possible contamination
+  minkpp_1.0        0.7494   moderate — possible contamination
+  ------------------------------------------------------
+  Seen dataset:   MMLU_KAZ_Translation
+  Control:        controlled_dataset_kazakh
+================================================================
+
+  HOW TO READ: AUROC > 0.5 means the model scores 'MMLU_KAZ_Translation'
+  higher than 'controlled_dataset_kazakh', i.e. the model is more familiar
+  with 'MMLU_KAZ_Translation' — evidence that it was seen during training.
+================================================================
+
+  Results saved to: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/auroc_MMLU_KAZ_Translation.csv
+============================================================
+ Finished all 8 datasets for Qwen3.5-4B
+ Results: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B
+ Log: /home/dameli/Min-K-Prob/results/contamination/Qwen3.5-4B/pipeline.log
+============================================================

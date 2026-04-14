@@ -1,0 +1,23 @@
+method,auroc,interpretation
+loss,0.7072,moderate — possible contamination
+zlib,0.4768,no signal
+mink_0.1,0.611,weak signal
+mink_0.2,0.6673,moderate — possible contamination
+mink_0.3,0.7036,moderate — possible contamination
+mink_0.4,0.7042,moderate — possible contamination
+mink_0.5,0.7234,moderate — possible contamination
+mink_0.6,0.7123,moderate — possible contamination
+mink_0.7,0.7019,moderate — possible contamination
+mink_0.8,0.6996,moderate — possible contamination
+mink_0.9,0.695,moderate — possible contamination
+mink_1.0,0.7073,moderate — possible contamination
+minkpp_0.1,0.6491,weak signal
+minkpp_0.2,0.6926,moderate — possible contamination
+minkpp_0.3,0.7224,moderate — possible contamination
+minkpp_0.4,0.7157,moderate — possible contamination
+minkpp_0.5,0.7371,moderate — possible contamination
+minkpp_0.6,0.7429,moderate — possible contamination
+minkpp_0.7,0.7429,moderate — possible contamination
+minkpp_0.8,0.7491,moderate — possible contamination
+minkpp_0.9,0.7525,strong — likely contamination
+minkpp_1.0,0.7588,strong — likely contamination
