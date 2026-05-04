@@ -1,23 +1,23 @@
 method,auroc,interpretation
-loss,0.4066,no signal
+loss,0.4065,no signal
 zlib,0.2879,no signal
-mink_0.1,0.5102,no signal
-mink_0.2,0.5028,no signal
-mink_0.3,0.4619,no signal
-mink_0.4,0.4407,no signal
-mink_0.5,0.4255,no signal
-mink_0.6,0.4162,no signal
-mink_0.7,0.4029,no signal
-mink_0.8,0.4015,no signal
-mink_0.9,0.3972,no signal
-mink_1.0,0.4068,no signal
-minkpp_0.1,0.6176,weak signal
-minkpp_0.2,0.5914,weak signal
-minkpp_0.3,0.594,weak signal
-minkpp_0.4,0.5836,weak signal
-minkpp_0.5,0.5954,weak signal
-minkpp_0.6,0.6143,weak signal
-minkpp_0.7,0.6225,weak signal
-minkpp_0.8,0.6452,weak signal
-minkpp_0.9,0.655,moderate — possible contamination
-minkpp_1.0,0.6762,moderate — possible contamination
+mink_0.1,0.5112,no signal
+mink_0.2,0.5034,no signal
+mink_0.3,0.4628,no signal
+mink_0.4,0.441,no signal
+mink_0.5,0.426,no signal
+mink_0.6,0.4168,no signal
+mink_0.7,0.4031,no signal
+mink_0.8,0.402,no signal
+mink_0.9,0.3974,no signal
+mink_1.0,0.4064,no signal
+minkpp_0.1,0.616,weak signal
+minkpp_0.2,0.5908,weak signal
+minkpp_0.3,0.5944,weak signal
+minkpp_0.4,0.5855,weak signal
+minkpp_0.5,0.5966,weak signal
+minkpp_0.6,0.6162,weak signal
+minkpp_0.7,0.6243,weak signal
+minkpp_0.8,0.6449,weak signal
+minkpp_0.9,0.6557,moderate — possible contamination
+minkpp_1.0,0.6777,moderate — possible contamination

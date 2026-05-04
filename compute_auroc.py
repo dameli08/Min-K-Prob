@@ -19,6 +19,7 @@ AUROC interpretation:
 """
 
 import argparse
+import os
 import pandas as pd
 import numpy as np
 from sklearn.metrics import roc_auc_score
@@ -38,6 +39,8 @@ def parse_args():
                         help="CSV scored by run_contamination.py — known unseen control (label=0)")
     parser.add_argument("--output", default=None,
                         help="Optional path to save results CSV")
+    parser.add_argument("--summary", default=None,
+                        help="Optional path to summary.csv to update with minkpp_0.8 AUROC and signal columns")
     return parser.parse_args()
 
 
@@ -107,6 +110,25 @@ def main():
     if args.output:
         pd.DataFrame(results).to_csv(args.output, index=False)
         print(f"\n  Results saved to: {args.output}")
+
+    if args.summary:
+        minkpp_row = next((r for r in results if r["method"] == "minkpp_0.8"), None)
+        if minkpp_row:
+            auroc_val = minkpp_row["auroc"]
+            signal_val = minkpp_row["interpretation"]
+            summary_path = args.summary
+            if os.path.exists(summary_path):
+                sdf = pd.read_csv(summary_path)
+            else:
+                sdf = pd.DataFrame()
+            if "dataset" in sdf.columns and seen_name in sdf["dataset"].values:
+                sdf.loc[sdf["dataset"] == seen_name, "minkpp_0.8_auroc"] = auroc_val
+                sdf.loc[sdf["dataset"] == seen_name, "minkpp_0.8_signal"] = signal_val
+            else:
+                new_row = pd.DataFrame([{"dataset": seen_name, "minkpp_0.8_auroc": auroc_val, "minkpp_0.8_signal": signal_val}])
+                sdf = pd.concat([sdf, new_row], ignore_index=True)
+            sdf.to_csv(summary_path, index=False)
+            print(f"  Summary updated: {summary_path}  [{seen_name}] minkpp_0.8_auroc={auroc_val}, signal={signal_val}")
 
 
 if __name__ == "__main__":
